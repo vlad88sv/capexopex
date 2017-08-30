@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Projects
+ *
+ * @ORM\Table(name="projects", indexes={@ORM\Index(name="pmId", columns={"pmId"})})
+ * @ORM\Entity
+ */
+class Projects
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pmId", type="integer", nullable=false)
+     */
+    private $pmid = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortName", type="string", length=50, nullable=false)
+     */
+    private $shortname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=250, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="project", type="json_array", nullable=false)
+     */
+    private $project;
+
+
+}
+

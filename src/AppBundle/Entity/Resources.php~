@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Resources
+ *
+ * @ORM\Table(name="resources", uniqueConstraints={@ORM\UniqueConstraint(name="name_resourceId", columns={"name", "resourceId"})})
+ * @ORM\Entity
+ */
+class Resources
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="shortName", type="string", length=100, nullable=false)
+     */
+    private $shortname = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=250, nullable=false)
+     */
+    private $name = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="resourceId", type="integer", nullable=false)
+     */
+    private $resourceid = '0';
+
+
+}
+

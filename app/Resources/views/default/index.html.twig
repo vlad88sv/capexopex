@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>CAPEX/OPEX automatic report</h1>
+    <p>From {{ iDateStart|date('Y-m-d') }} to {{ iDateEnd|date('Y-m-d') }}</p>
+
+    {% for name, resource in ret %}
+        <hr/>
+        <h2 class="mt-2">{{ name }}</h2>
+        <p>
+            Total calls to PM.com API: {{ resource.info.calls|default(0) }}
+            {% if resource.info.callsFailed|length > 0 %}
+                &nbsp;( {{ resource.info.callsFailed|default(0) }} recovered calls )
+            {% endif %}
+        </p>
+        {% if resource.data|length == 0 %}
+            <p>No missing CAPEX / OPEX typification</p>
+        {% else %}
+            <h3>Missing CAPEX / OPEX typification</h3>
+            <table class="table table-striped table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Task ID</th>
+                        <th>Date</th>
+                        <th>Project name</th>
+                        <th>Task name</th>
+                        <th>Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in resource.data %}
+                    <tr>
+                        <td>{{ item.taskId  }}</td>
+                        <td>{{ item.date|date('Y-m-d')  }}</td>
+                        <td>{{ item.pm.name }}</td>
+                        <td>{{ item.task.name }}</td>
+                        <td>{{ item.hours }}h</td>
+                    </tr>
+                {%  endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

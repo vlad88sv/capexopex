@@ -1,0 +1,102 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Timesheets
+ *
+ * @ORM\Table(name="timesheets", indexes={@ORM\Index(name="type", columns={"type"}), @ORM\Index(name="FK_timesheets_resources", columns={"resourceId"}), @ORM\Index(name="status", columns={"status"}), @ORM\Index(name="hours", columns={"hours"}), @ORM\Index(name="taskId", columns={"taskId"}), @ORM\Index(name="FK_timesheets_projects", columns={"projectId"})})
+ * @ORM\Entity
+ */
+class Timesheets
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="hours", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $hours = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="adminTypeId", type="integer", nullable=true)
+     */
+    private $admintypeid = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="taskId", type="integer", nullable=true)
+     */
+    private $taskid = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="type", type="boolean", nullable=false)
+     */
+    private $type = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="taskName", type="string", length=250, nullable=false)
+     */
+    private $taskname;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=false)
+     */
+    private $status = '0';
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="task", type="json_array", nullable=false)
+     */
+    private $task;
+
+    /**
+     * @var \Projects
+     *
+     * @ORM\ManyToOne(targetEntity="Projects")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="projectId", referencedColumnName="id")
+     * })
+     */
+    private $projectid;
+
+    /**
+     * @var \Resources
+     *
+     * @ORM\ManyToOne(targetEntity="Resources")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="resourceId", referencedColumnName="id")
+     * })
+     */
+    private $resourceid;
+
+
+}
+
