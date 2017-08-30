@@ -141,7 +141,7 @@ class projectmanager_com
                     }
 
                     if ($missing) {
-                        $this->flagTaskForNoCache($aTimeSheet->taskId);
+                        $this->flagTaskForNoCache($aTimeSheet);
                         $aRet[] = (object)array_merge_recursive((array)$aTimeSheet, ['task' => $oTask], ['pm' => $oPm]);
                     }
                 }
@@ -160,7 +160,7 @@ class projectmanager_com
         if ($dTask) {
             $dTask->setStatus(TRUE);
             $this->em->persist($dTask);
-            $this->em - flush();
+            $this->em-> flush();
         }
     }
 
