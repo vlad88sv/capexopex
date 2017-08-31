@@ -34,7 +34,7 @@ class projectmanager_com
     public function timesheetByResource($iResourceID) {
 
 
-        for($i = 0; $i < 5; $i++) {
+        for($i = 0; $i < 10; $i++) {
             $oRet = $this->circleRestClientBundle->get("https://api.projectmanager.com/api/v1/resources/{$iResourceID}/timesheets.json");
             $aContent = json_decode($oRet->getContent());
 

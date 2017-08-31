@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461e7207-b8c8-4139-b049-92cd05bfee82" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/projectmanager_com.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/projectmanager_com.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +30,8 @@
       <file leaf-file-name="projectmanager_com.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/projectmanager_com.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="155" column="38" lean-forward="false" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="38" />
+            <state relative-caret-position="352">
+              <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
               <folding>
                 <element signature="e#132#162#0#PHP" expanded="true" />
               </folding>
@@ -345,12 +346,12 @@
       <workItem from="1503518804208" duration="5920000" />
       <workItem from="1503592155937" duration="22291000" />
       <workItem from="1503926131866" duration="26414000" />
-      <workItem from="1504032597006" duration="19141000" />
+      <workItem from="1504032597006" duration="20443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73766000" />
+    <option name="totallyTimeSpent" value="75068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="29" width="1938" height="1060" extended-state="6" />
@@ -749,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/projectmanager_com.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="155" column="38" lean-forward="false" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="38" />
+        <state relative-caret-position="352">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding>
             <element signature="e#132#162#0#PHP" expanded="true" />
           </folding>
