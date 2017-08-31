@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Services\projectmanager_com;
 
@@ -58,6 +59,17 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $this->getDoctrine()->getManager()->getConnection()->getConfiguration()->setSQLLogger(null);
+
+        $cache = new FilesystemCache();
+
+        if ($cache->has('cache.front')) {
+
+            $response = $cache->get('cache.front');
+            $response->headers->set('x-cache', 'SimpleCache');
+            return $response;
+        }
+
         /* @var $spm \AppBundle\Services\projectmanager_com */
         $spm = $this->container->get(projectmanager_com::class);
         $ret = [];
@@ -79,11 +91,15 @@ class DefaultController extends Controller
             }
         }
 
-        return $this->render('default/index.html.twig', [
+        $twig = $this->render('default/index.html.twig', [
             'ret' => $ret,
             'iDateStart' => $iDateStart,
             'iDateEnd' => $iDateEnd
         ]);
+
+        $cache->set('cache.front', $twig, 1800);
+
+        return $twig;
     }
 
 
