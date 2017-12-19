@@ -20,6 +20,7 @@ class DefaultController extends Controller
         1874502 => "Rafael Fernando Gutierrez Tejada",
         2144940 => "Carlos Jose Recinos Herrera",
         2280031 => "Jose Alejandro Mejia Reyes",
+        2280075 => "Mauricio Antonio Batlle Castro",
 
         // Corporate
         2217562 => "Maria Guillermina Velasco Perez",
@@ -102,5 +103,13 @@ class DefaultController extends Controller
         return $twig;
     }
 
+    /**
+     * @Route("/update", name="updateResources")
+     */
+    public function updateAction(Request $request)
+    {
+        $spm = $this->container->get(projectmanager_com::class);
+        $spm->updateResources();
+    }
 
 }
