@@ -35,6 +35,7 @@ class DefaultController extends Controller
         2149750 => "Ernesto Enrique Mena Abdala",
         2280044 => "Claudia Carolina Figueroa Romero",
         2280016 => "Rina Elizabeth Castillo Ortiz",
+        2280076 => "Diana Marcela Ortega Santos",
 
         // Soporte
         2279956 => "Luis Soriano Rodriguez",
@@ -47,6 +48,18 @@ class DefaultController extends Controller
         // PMs
         1809427 => "Jose Roberto Bojorquez Trujillo",
         1793765 => "Ruth Viviana Hernandez Vandenberg",
+
+        // Qlik / DI
+        2280043 => "Pablo Oswaldo Portillo Alvarado",
+        1813376 => "Miguel Cubias Caceres",
+        2280069 => "David Jotam Funes Urrutia",
+        2280057 => "Luis Rodolfo Velasco Peña",
+        2191869 => "Miguel Angel Lopez Alfaro",
+
+        1761307 => "Karla Magaly Rivas Vasquez",
+        2179426 => "Marco Alexander Orellana Sandoval",
+        2212252 => "Walter Alexander Gonzalez Martinez",
+        1813376 => "Miguel Cubias Caceres",
 
         // Managers
         1695060 => "Juan Othmaro Menjivar Rosales",
